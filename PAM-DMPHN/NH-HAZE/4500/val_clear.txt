@@ -1,0 +1,5 @@
+val/clear/48.png
+val/clear/46.png
+val/clear/50.png
+val/clear/47.png
+val/clear/49.png

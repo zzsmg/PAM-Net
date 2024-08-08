@@ -1,0 +1,5 @@
+test/haze/52_haze.png
+test/haze/51_haze.png
+test/haze/55_haze.png
+test/haze/53_haze.png
+test/haze/54_haze.png

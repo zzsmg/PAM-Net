@@ -1,0 +1,5 @@
+val/haze/46_haze.png
+val/haze/48_haze.png
+val/haze/47_haze.png
+val/haze/49_haze.png
+val/haze/50_haze.png
