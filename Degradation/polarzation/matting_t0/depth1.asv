@@ -1,0 +1,25 @@
+    img_name = "/data/Pytorch_Porjects/depthmap/result_3_x4/outdoor_009_clear/img_depth/depth_imwrite.png";
+    scribs_img_name = "/data/Pytorch_Porjects/depthmap/result_3_x4/outdoor_009_clear/img_depth/depth_imwrite.png";
+    %img_name='/data/Pytorch_Porjects/depthmap/result_mianfen2/matting/block_5.png';
+    %scribs_img_name='/data/Pytorch_Porjects/depthmap/result_mianfen2/matting/block_5.png';
+    I=double(imread(img_name))/255;
+    mI=double(imread(scribs_img_name))/255;
+    consts_map=sum(abs(I-mI),3)>0.001;
+    
+    [h,w,c]=size(I);
+    N=w*h;
+    
+    Diag = spdiags(ones(N,1), 0, N, N);
+    Ds=spdiags(consts_map(:),0,N,N);
+    epsilon=1;
+    win_size=3;
+    L=getLaplacian1(I,consts_map,epsilon,win_size);
+    lambda=5;
+    I1=I(:,:,1);
+    x=(L+lambda*Diag)\(lambda*I1(:));
+    alpha=reshape(x,h,w);
+    %figure, imshow(alpha);
+    filename = "/data/Pytorch_Porjects/depthmap/result_3_x4/outdoor_009/img_depth/depth_imwrite.png";
+    %filename = '/data/Pytorch_Porjects/depthmap/result_mianfen2/matting/mt_img5_5.png';
+    imwrite(alpha, filename);
+    %drawnow;
