@@ -1,1 +1,1 @@
-《Parameters-Adaptive Mechanism for Nonhomogeneous Image Dehazing based on Degradation Degree》
+《Parameters-adaptive mechanism based on Degradation Degree for Nonhomogeneous Image Dehazing》
